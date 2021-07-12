@@ -17,7 +17,7 @@ const thirdNumber = parseInt(prompt('thirdNumber'));
 const fourthNumber = isNaN(thirdNumber) || parseInt(prompt('fourthNumber'));
 
 if(!isNaN(thirdNumber) && !isNaN(fourthNumber)) {
-    console.log(`Ответ: ${thirdNumber + fourthNumber}, ${firstNumber / fourthNumber}`);
+    console.log(`Ответ: ${thirdNumber + fourthNumber}, ${thirdNumber / fourthNumber}`);
 }
 else {
     console.log('Некорректный ввод!');
