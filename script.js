@@ -9,12 +9,12 @@ const isEqual = (firstObj, secondObj) => {
     return true;
 }
 
-const data = { a: 1, b: 1};
+const data1 = { a: 1, b: 1};
 const data2 = { a: 1, b: 1};
 const data3 = { a: 1, b: 2};
 
-console.log(isEqual(data, data2));
-console.log(isEqual(data, data3));
+console.log(isEqual(data1, data2));
+console.log(isEqual(data1, data3));
 
 // /task 2 (#1)
 
@@ -23,11 +23,11 @@ console.log(isEqual(data, data3));
 const isUniqValue = (value) => (value === 0 || value === false);
 const isEmpty = (object) => Object.values(object).every(value => !(isUniqValue(value) || !!value));
 
-const data = { a: 1, b: undefined };
-const data2 = { a: undefined };
+const data4 = { a: 1, b: undefined };
+const data5 = { a: undefined };
 
-console.log(isEmpty(data));
-console.log(isEmpty(data2));
+console.log(isEmpty(data4));
+console.log(isEmpty(data5));
 
 // /task 2 (#2)
 
