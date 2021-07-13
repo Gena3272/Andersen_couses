@@ -10,8 +10,8 @@
  * Вводим 2 и 'abc', получаем "Некорректный ввод!"
  */
 
-const firstNumber = prompt('firstNumber');
-const secondNumber = prompt('secondNumber');
+const firstNumber = parseInt(prompt('firstNumber'));
+const secondNumber = parseInt(prompt('secondNumber'));
 
 if (!isNaN(firstNumber) && !isNaN(secondNumber)) {
     console.log(Number(firstNumber).toString(Number(secondNumber)));
