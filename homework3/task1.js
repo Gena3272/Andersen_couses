@@ -3,7 +3,7 @@
  * При этом нужно учитывать знаки препинания и пробелы.
  */
 
-const getStringLetters = (str) => str.replace(/[^a-z]/g, '').toLowerCase();
+const getStringLetters = (str) => str.replace(/[^a-z-A-Z]/g, '').toLowerCase();
 
 const checkPalindrome = (str) => {
     const stringLetters = getStringLetters(str);
