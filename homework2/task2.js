@@ -7,8 +7,8 @@
  * Считаем за пустые значения: '', null, NaN, undefined
  */
 
-const isUniqValue = (value) => (value === 0 || value === false);
-const isEmpty = (object) => Object.values(object).every(value => !(isUniqValue(value) || !!value));
+const isExceptionValue = (value) => (value === 0 || value === false);
+const isEmpty = (object) => Object.values(object).every(value => !(isExceptionValue(value) || !!value));
 
 const data4 = { a: 1, b: undefined };
 const data5 = { a: undefined };
