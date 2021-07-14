@@ -3,7 +3,7 @@
  * При этом нужно учитывать знаки препинания и пробелы.
  */
 
-const getStringLetters = (str) => str.replace(/[^a-z-A-Z]/g, '').toLowerCase();
+const getStringLetters = (str) => str.replace(/[^a-z]/gi, '').toLowerCase();
 
 const checkPalindrome = (str) => {
     const stringLetters = getStringLetters(str);
@@ -11,5 +11,3 @@ const checkPalindrome = (str) => {
 
     return stringLetters === reversedStringLetters;
 }
-
-console.log(checkPalindrome('!an!<nan'));

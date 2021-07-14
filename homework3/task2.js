@@ -3,6 +3,4 @@
  * Главными будут "a","e","i","o","u".
  */
 
-const countVowels = (str) => str.toLowerCase().match(/[aeiou]/g).length;
-
-console.log(countVowels('World Of Warcraft'));
+const countVowels = (str) => str.replace(/[^aeiou]/gi, '').length;
