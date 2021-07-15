@@ -5,7 +5,3 @@
  */
 
 const isEqual = (firstObj, secondObj) => Object.keys(firstObj).every(key => firstObj[key] === secondObj[key]);
-
-const data1 = { a: 1, b: 1 };
-const data2 = { a: 1, b: 1 };
-const data3 = { a: 1, b: 1, c: 2 };
