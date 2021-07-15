@@ -12,9 +12,3 @@ const isEmpty = (object) => Object.values(object).every(value => !(isExceptionVa
 
 const data4 = { a: 1, b: undefined };
 const data5 = { a: undefined };
-
-console.log(isEmpty(data4));
-console.log(isEmpty(data5));
-
-
-

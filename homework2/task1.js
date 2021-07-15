@@ -9,6 +9,3 @@ const isEqual = (firstObj, secondObj) => Object.keys(firstObj).every(key => firs
 const data1 = { a: 1, b: 1 };
 const data2 = { a: 1, b: 1 };
 const data3 = { a: 1, b: 1, c: 2 };
-
-console.log(isEqual(data1, data2));
-console.log(isEqual(data1, data3));
