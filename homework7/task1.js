@@ -40,7 +40,6 @@ function getMinAndMaxTemperatureObj(date) {
     }, {});
 }
 
-
 function getFormatTemperatureToCelsius(date) {
     const minAndMaxTemperatureObj = { min: Math.round(date.min - 273), max: Math.round(date.max - 273) };
     minAndMaxTemperature = minAndMaxTemperatureObj;
