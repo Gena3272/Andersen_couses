@@ -9,7 +9,7 @@ const URL = 'https://api.openweathermap.org/data/2.5/forecast?id=710791&appid=57
 const CORRECT_STATUS = '200';
 
 let weather = null;
-let minAndMaxTemporary = null;
+let minAndMaxTemperature = null;
 
 function showErrorMessage(errorMessage) {
     alert(errorMessage);
@@ -20,7 +20,7 @@ const fetchWeather = fetch(URL)
     .then((resp) => resp.json())
     .catch(errorMessage => showErrorMessage(errorMessage));
 
-function getMinAndMaxObj(date) {
+function getMinAndMaxTemperatureObj(date) {
     weather = date;
 
     return date.list.reduce((acc, cv) => {
@@ -41,11 +41,11 @@ function getMinAndMaxObj(date) {
 }
 
 
-function getFormatTemporaryToCelsius(date) {
-    const minAndMaxTemporaryObj = { min: Math.round(date.min - 273), max: Math.round(date.max - 273) };
-    minAndMaxTemporary = minAndMaxTemporaryObj;
+function getFormatTemperatureToCelsius(date) {
+    const minAndMaxTemperatureObj = { min: Math.round(date.min - 273), max: Math.round(date.max - 273) };
+    minAndMaxTemperature = minAndMaxTemperatureObj;
 
-    return minAndMaxTemporaryObj;
+    return minAndMaxTemperatureObj;
 }
 
 const showTheWeather = async () => {
@@ -57,12 +57,12 @@ const showTheWeather = async () => {
         showErrorMessage(date.message);
     })
 
-    const minAndMaxObj = getMinAndMaxObj(fetchWeatherSuccess);
+    const minAndMaxTemperatureObj = getMinAndMaxTemperatureObj(fetchWeatherSuccess);
 
-    return getFormatTemporaryToCelsius(minAndMaxObj);
+    return getFormatTemperatureToCelsius(minAndMaxTemperatureObj);
 };
 
 showTheWeather().then(() => {
     console.log(weather, 'response from API the weather for 4 days');
-    console.log(minAndMaxTemporary, 'min and max temporary for 4 days');
+    console.log(minAndMaxTemperature, 'min and max temperature for 4 days');
 });
