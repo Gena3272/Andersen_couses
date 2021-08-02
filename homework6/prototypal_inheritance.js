@@ -7,46 +7,41 @@
  * 1. Написать прототипное наследование.
  */
 
-const user = {
-    name: 'User',
-    isAdminPanel: false,
-    getName() {
-        return this.name;
-    },
-    getIsAdmin() {
-        return this.isAdmin;
-    },
-};
+function User(name) {
+    this.name = name;
+    this.isAdmin = false;
+}
 
-const admin = Object.create(user, {
-    secondName: {
-        value: 'Admin',
-    },
-    isAdminPanel: {
-        value: true,
-    },
-    getName: {
-        value: function () {
-            return this.secondName;
-        }
-    },
-});
+User.prototype.getName = function() {
+    return this.name;
+}
 
-const defaultUser = Object.create(user, {
-    age: {
-        value: 30,
-    },
-    secondName: {
-        value: 'defaultUser',
-    },
-    getName: {
-        value: function () {
-            return this.__proto__.getName() + this.secondName;
-        }
-    },
-    getAge: {
-        value: function () {
-            return this.age;
-        }
-    },
-});
+User.prototype.getIsAdmin = function() {
+    return this.isAdmin;
+}
+
+Admin.prototype = Object.create(User.prototype);
+
+function Admin(name, secondName) {
+    User.call(this, name, true);
+    this.secondName = secondName;
+}
+
+Admin.prototype.getName = function() {
+    return this.name + this.secondName;
+}
+
+DefaultUser.prototype = Object.create(User.prototype);
+
+function DefaultUser(name, age) {
+    User.call(this, name, false);
+    this.age = age;
+}
+
+DefaultUser.prototype.getName = function() {
+    return this.name;
+}
+
+DefaultUser.prototype.getAge = function() {
+    return this.age;
+}
